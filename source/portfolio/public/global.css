@@ -1,5 +1,5 @@
 /* Default (Dark mode) */
-:root {
+body {
     --background-color-primary: #121212;
     --background-color-secondary: #1E1E1E;
     /* Slightly lighter than primary background */
@@ -13,7 +13,7 @@
 
 /* Light mode overrides */
 @media (prefers-color-scheme: light) {
-    :root {
+    body {
         --background-color-primary: #FFFFFF;
         --background-color-secondary: #F5F5F5;
         /* Slightly darker than primary background */
@@ -27,7 +27,9 @@
 }
 
 /* Light toggle */
-:root.light {
+/* use this as long as javascript is enabled */
+/* otherwise, use the media query */
+body.light {
     --background-color-primary: #FFFFFF;
     --background-color-secondary: #F5F5F5;
     /* Slightly darker than primary background */
@@ -40,7 +42,7 @@
 }
 
 /* Dark toggle */
-:root.dark {
+body.dark {
     --background-color-primary: #121212;
     --background-color-secondary: #1E1E1E;
     /* Slightly lighter than primary background */
@@ -58,6 +60,7 @@ body {
     color: var(--text-color-primary);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* Example font */
+	margin: 0;
 }
 
 h1,
