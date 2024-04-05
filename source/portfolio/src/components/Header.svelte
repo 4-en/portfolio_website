@@ -4,8 +4,8 @@
 
 <style>
   header {
-    background-color: white;
-    color: white;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-primary);
     padding: 10px;
   }
 
