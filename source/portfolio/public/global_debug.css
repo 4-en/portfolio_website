@@ -1,0 +1,11 @@
+/* debug */
+
+body.light {
+	border: 5px solid blue;
+	/* Temporary test */
+}
+
+body.dark {
+	border: 5px solid red;
+	/* Temporary test */
+}
