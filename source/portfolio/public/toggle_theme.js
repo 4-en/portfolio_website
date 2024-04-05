@@ -49,6 +49,7 @@ function toggleTheme() {
     console.log(`Theme set to ${theme}`);
 }
 
+
 // initialize the theme
 function initTheme() {
     let theme = getTheme();
