@@ -35,6 +35,47 @@
     padding: 10px;
   }
 
+  /* If mobile, show header on bottom and make it sticky */
+  /* Fade out when scrolling down */
+  @media (max-width: 600px) {
+
+    
+    header {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
+      transition: transform 0.3s ease; /* Smooth transition for hiding */
+      z-index: 100; /* Ensure header is above other content */
+
+
+    }
+
+    /* Hide header when scrolling down */
+    /* not supported in all browsers */
+    @supports (animation-timeline: scroll()) {
+      header {
+        animation: moveOut linear;
+        animation-range-start: 100px;
+        animation-range-end: 200px;
+        animation-timeline: scroll();
+        animation-fill-mode: forwards;
+      }
+    }
+
+    @keyframes moveOut {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      
+    }
+  }
+
   nav {
     display: flex;
     justify-content: space-evenly;
