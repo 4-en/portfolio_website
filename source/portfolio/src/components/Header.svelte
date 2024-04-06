@@ -1,8 +1,8 @@
 <script>
-  import { Link } from 'svelte-routing';
-  import { getTheme, toggleTheme as toggleThemeUtil } from '../utils.js';
+  import { Link } from "svelte-routing";
+  import { getTheme, toggleTheme as toggleThemeUtil } from "../utils.js";
 
-  import { writable } from 'svelte/store';
+  import { writable } from "svelte/store";
 
   let theme = writable(getTheme());
 
@@ -12,9 +12,21 @@
     toggleThemeUtil();
     theme.update(() => getTheme());
   }
-
-
 </script>
+
+<header>
+  <div class="header-content">
+    <nav>
+      <Link to="/">Home</Link>
+      <a href="https://github.com/4-en">GitHub</a>
+      <a href="http://aiko.lol">Aiko</a>
+      <Link to="/about">About</Link>
+      <button on:click={toggleTheme}>
+        {currentTheme === "light" ? "Dark" : "Light"}
+      </button>
+    </nav>
+  </div>
+</header>
 
 <style>
   header {
@@ -62,19 +74,4 @@
     margin: 0 auto;
     max-width: 960px;
   }
-
 </style>
-
-<header>
-  <div class="header-content">
-    <nav>
-      <Link to="/">Home</Link>
-      <a href="https://github.com/4-en">GitHub</a>
-      <a href="http://aiko.lol">Aiko</a>
-      <Link to="/about">About</Link>
-      <button on:click={toggleTheme}>
-        {currentTheme === 'light' ? 'Dark' : 'Light'}
-      </button>
-    </nav>
-  </div>
-</header>
