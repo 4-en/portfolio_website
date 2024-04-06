@@ -30,14 +30,28 @@
     width: 100%;
   }
 
-  nav :global(a) {
+  nav :global(*) {
+    all: unset;
+  }
+
+  nav :global(*) {
     color: purple;
     text-decoration: none;
     transition: border-bottom 0.3s;
     border-bottom: 1px solid transparent;
+    font-size: 1rem;
+    cursor: pointer;
   }
 
-  nav :global(a):hover {
+  nav :global(*:not(:last-child)) {
+    margin-right: 10px;
+  }
+
+  :global(.dark) nav :global(*) {
+    color: white;
+  }
+
+  nav :global(*):hover {
     border-bottom: 1px solid purple;
   }
 
@@ -49,14 +63,6 @@
     max-width: 960px;
   }
 
-  button {
-    background-color: transparent;
-    border: none;
-    color: purple;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
 </style>
 
 <header>
